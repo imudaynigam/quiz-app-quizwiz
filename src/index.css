@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light mode - default */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 20 14.3% 4.1%; /* Near black for text */
+
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 20 14.3% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+
+    --primary: 263 70% 50%; /* Primary purple */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 20 5.9% 90%; /* Light gray secondary */
+    --secondary-foreground: 20 9% 10%;
+
+    --muted: 20 5.9% 95%; /* Very light gray */
+    --muted-foreground: 20 5.9% 45%;
+
+    --accent: 20 5.9% 90%; /* Light accent */
+    --accent-foreground: 20 14.3% 4.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 20 5.9% 90%; /* Light gray borders */
+    --input: 20 5.9% 90%;
+    --ring: 263 70% 50%; /* Primary focus ring */
+
+    --radius: 0.75rem;
+
+    /* Quiz App Custom Colors */
+    --quiz-primary: 263 70% 50%;
+    --quiz-secondary: 217 91% 60%;
+    --quiz-success: 120 100% 40%;
+    --quiz-danger: 0 72% 51%;
+    --quiz-warning: 48 100% 50%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--quiz-primary)), hsl(var(--quiz-secondary)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--quiz-success)), hsl(120 100% 45%));
+    --gradient-danger: linear-gradient(135deg, hsl(var(--quiz-danger)), hsl(0 72% 56%));
+    
+    /* Enhanced shadows for glass-morphism - positioned correctly on the element */
+    --shadow-glow: 0 0 40px hsl(var(--quiz-primary) / 0.3);
+    --shadow-card: 0 4px 16px -8px hsl(20 14.3% 4.1% / 0.08);
+    --shadow-card-elevated: 0 8px 32px -12px hsl(20 14.3% 4.1% / 0.12);
+    --shadow-glass: 
+      0 1px 3px 0 hsl(20 14.3% 4.1% / 0.1),
+      0 4px 8px -2px hsl(20 14.3% 4.1% / 0.06),
+      inset 0 1px 0 hsl(0 0% 100% / 0.1);
+    --shadow-glass-hover: 
+      0 4px 12px -2px hsl(20 14.3% 4.1% / 0.12),
+      0 8px 16px -4px hsl(20 14.3% 4.1% / 0.08),
+      inset 0 1px 0 hsl(0 0% 100% / 0.15);
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 20 14.3% 4.1%;
+    --sidebar-primary: 263 70% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 20 5.9% 95%;
+    --sidebar-accent-foreground: 20 14.3% 4.1%;
+    --sidebar-border: 20 5.9% 90%;
+    --sidebar-ring: 263 70% 50%;
+  }
+
+  .dark {
+    /* Dark mode theme - Enhanced visibility */
+    --background: 222.2 84% 4.9%; /* Dark background */
+    --foreground: 210 40% 98%; /* Light text */
+
+    --card: 222.2 84% 8.5%; /* Lighter cards for better visibility */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 8.5%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 263 70% 65%; /* Brighter primary for dark mode */
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 20%; /* Lighter secondary */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 20%; /* Lighter muted for better contrast */
+    --muted-foreground: 215 20.2% 70%;
+
+    --accent: 217.2 32.6% 20%; /* Lighter accent */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 22%; /* More visible borders */
+    --input: 217.2 32.6% 20%;
+    --ring: 263 70% 65%; /* Brighter focus ring */
+    
+    /* Quiz App Custom Colors for dark mode */
+    --quiz-primary: 263 70% 60%; /* Lighter purple for dark mode */
+    --quiz-secondary: 217 91% 70%; /* Lighter blue for dark mode */
+    --quiz-success: 120 100% 50%; /* Brighter green for dark mode */
+    --quiz-danger: 0 72% 60%; /* Brighter red for dark mode */
+    --quiz-warning: 48 100% 60%; /* Brighter yellow for dark mode */
+    
+    /* Enhanced dark mode shadows for better visibility */
+    --shadow-glow: 0 0 40px hsl(var(--quiz-primary) / 0.5);
+    --shadow-card: 0 8px 25px -8px hsl(0 0% 0% / 0.6);
+    --shadow-card-elevated: 0 16px 50px -16px hsl(0 0% 0% / 0.8);
+    --shadow-glass: 
+      0 2px 8px 0 hsl(0 0% 0% / 0.3),
+      0 8px 16px -4px hsl(0 0% 0% / 0.2),
+      inset 0 1px 0 hsl(0 0% 100% / 0.1),
+      inset 0 0 0 1px hsl(0 0% 100% / 0.05);
+    --shadow-glass-hover: 
+      0 4px 16px -2px hsl(0 0% 0% / 0.4),
+      0 12px 24px -6px hsl(0 0% 0% / 0.25),
+      inset 0 1px 0 hsl(0 0% 100% / 0.15),
+      inset 0 0 0 1px hsl(0 0% 100% / 0.1);
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 263 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 263 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .quiz-gradient {
+    @apply bg-gradient-primary;
+  }
+  
+  .quiz-card {
+    @apply bg-card shadow-card rounded-lg border border-border;
+  }
+  
+  .quiz-card-elevated {
+    @apply bg-card shadow-card-elevated rounded-lg border border-border/50;
+  }
+  
+  .quiz-card-glass {
+    background-color: hsl(var(--card) / 0.95);
+    @apply backdrop-blur-lg border border-border/50 rounded-xl relative;
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-smooth);
+    transform: translateZ(0);
+  }
+  
+  .quiz-card-glass:hover {
+    background-color: hsl(var(--card) / 0.98);
+    @apply border-primary/60;
+    box-shadow: var(--shadow-glass-hover);
+    transform: translateY(-4px) translateZ(0);
+  }
+  
+  /* Enhanced dark mode specific styling */
+  .dark .quiz-card-glass {
+    background-color: hsl(var(--card) / 0.90);
+    @apply border-border/60;
+  }
+  
+  .dark .quiz-card-glass:hover {
+    background-color: hsl(var(--card) / 0.95);
+    @apply border-primary/70;
+    transform: translateY(-4px) translateZ(0);
+  }
+  
+  /* Smaller glass-morphism cards for nested content */
+  .quiz-card-glass-sm {
+    background-color: hsl(var(--muted) / 0.8);
+    @apply backdrop-blur-md border border-border/40 rounded-lg relative;
+    box-shadow: 
+      0 1px 3px 0 hsl(var(--foreground) / 0.05),
+      0 2px 4px -1px hsl(var(--foreground) / 0.03),
+      inset 0 1px 0 hsl(var(--background) / 0.1);
+    transition: var(--transition-smooth);
+  }
+  
+  .quiz-card-glass-sm:hover {
+    background-color: hsl(var(--muted) / 0.9);
+    @apply border-border/60;
+    box-shadow: 
+      0 2px 6px 0 hsl(var(--foreground) / 0.08),
+      0 4px 8px -2px hsl(var(--foreground) / 0.05),
+      inset 0 1px 0 hsl(var(--background) / 0.15);
+    transform: translateY(-1px);
+  }
+  
+  /* Enhanced dark mode for small cards */
+  .dark .quiz-card-glass-sm {
+    background-color: hsl(var(--muted) / 0.85);
+    @apply border-border/50;
+    box-shadow: 
+      0 2px 6px 0 hsl(0 0% 0% / 0.15),
+      0 4px 8px -2px hsl(0 0% 0% / 0.1),
+      inset 0 1px 0 hsl(0 0% 100% / 0.08);
+  }
+  
+  .dark .quiz-card-glass-sm:hover {
+    background-color: hsl(var(--muted) / 0.95);
+    @apply border-border/70;
+    box-shadow: 
+      0 4px 12px 0 hsl(0 0% 0% / 0.2),
+      0 8px 16px -4px hsl(0 0% 0% / 0.15),
+      inset 0 1px 0 hsl(0 0% 100% / 0.12);
+  }
+  
+  /* Glass-morphism for badges and smaller UI elements */
+  .quiz-badge-glass {
+    background-color: hsl(var(--muted) / 0.6);
+    @apply backdrop-blur-sm border border-border/20 rounded-full;
+    box-shadow: 
+      0 1px 2px 0 hsl(var(--foreground) / 0.03),
+      inset 0 1px 0 hsl(var(--background) / 0.08);
+    transition: var(--transition-smooth);
+  }
+  
+  .quiz-button-primary {
+    @apply bg-gradient-primary hover:shadow-glow transition-all duration-300 ease-out;
+  }
+  
+  .quiz-button-success {
+    @apply bg-gradient-success hover:brightness-110 transition-all duration-300 ease-out;
+  }
+  
+  .quiz-button-danger {
+    @apply bg-gradient-danger hover:brightness-110 transition-all duration-300 ease-out;
+  }
+  
+  .quiz-pulse {
+    animation: quiz-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
+  
+  .animate-tilt {
+    animation: tilt 10s infinite linear;
+  }
+  
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes quiz-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes tilt {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.5deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+}
