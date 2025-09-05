@@ -131,7 +131,7 @@ npm run lint         # Run ESLint for code quality checks
 ### Starting a Quiz
 1. **Select Difficulty**: Choose from Easy, Medium, or Hard levels
 2. **Begin Quiz**: Click "Start Quiz" to begin your challenge
-3. **Answer Questions**: Select your answers from multiple choice options
+3. **Answer Questions**: Select your answers from multiple-choice options
 4. **Navigate**: Use Previous/Next buttons or progress dots to navigate
 5. **Complete**: Finish the quiz to see your results and score
 
@@ -146,9 +146,3 @@ npm run lint         # Run ESLint for code quality checks
 ### Build for Production
 ```bash
 npm run build
-
----
-
-<div align="center">
-  <p>Made by Uday Nigam</p>
-</div>
